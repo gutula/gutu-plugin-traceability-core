@@ -79,7 +79,11 @@ export default definePackage({
   "publicCommands": [
     "traceability.links.record",
     "traceability.dimensions.publish",
-    "traceability.reconciliation.queue"
+    "traceability.reconciliation.queue",
+    "traceability.links.hold",
+    "traceability.links.release",
+    "traceability.links.amend",
+    "traceability.links.reverse"
   ],
   "publicQueries": [
     "traceability.document-graph",

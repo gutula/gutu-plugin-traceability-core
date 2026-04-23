@@ -71,6 +71,10 @@ Defines document lineage, common dimensions, and reconciliation surfaces so cros
 | Action | `traceability.links.record` | Permission: `traceability.links.write` | Record Traceability Link<br>Idempotent<br>Audited |
 | Action | `traceability.dimensions.publish` | Permission: `traceability.dimensions.write` | Publish Common Dimension<br>Non-idempotent<br>Audited |
 | Action | `traceability.reconciliation.queue` | Permission: `traceability.reconciliation.write` | Queue Reconciliation Item<br>Non-idempotent<br>Audited |
+| Action | `traceability.links.hold` | Permission: `traceability.links.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `traceability.links.release` | Permission: `traceability.links.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `traceability.links.amend` | Permission: `traceability.links.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `traceability.links.reverse` | Permission: `traceability.links.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `traceability.links` | Portal disabled | Typed upstream and downstream document links with correlation metadata.<br>Purpose: Expose business lineage instead of hiding cross-plugin effects inside private tables.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `traceability.dimensions` | Portal disabled | Shared company, branch, warehouse, project, and cost dimensions used across plugins.<br>Purpose: Keep operating dimensions reusable and permission-aware without duplicating scope metadata.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `traceability.reconciliation` | Portal disabled | Exception queues and reconciliation checkpoints for downstream business flows.<br>Purpose: Provide a durable place to surface partial failure, drift, and repair work.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/traceability-core";
+import { manifest, recordTraceabilityLinkAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/traceability-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  recordTraceabilityLinkAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/traceability-core";
+import { manifest, recordTraceabilityLinkAction } from "@plugins/traceability-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", recordTraceabilityLinkAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `traceability.links.record`, `traceability.dimensions.publish`, `traceability.reconciliation.queue`.
+- Exports 7 governed actions: `traceability.links.record`, `traceability.dimensions.publish`, `traceability.reconciliation.queue`, `traceability.links.hold`, `traceability.links.release`, `traceability.links.amend`, `traceability.links.reverse`.
 - Owns 3 resource contracts: `traceability.links`, `traceability.dimensions`, `traceability.reconciliation`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

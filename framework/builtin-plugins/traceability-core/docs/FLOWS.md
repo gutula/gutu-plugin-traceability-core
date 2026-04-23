@@ -5,6 +5,10 @@
 - `traceability.links.record`: Record Traceability Link
 - `traceability.dimensions.publish`: Publish Common Dimension
 - `traceability.reconciliation.queue`: Queue Reconciliation Item
+- `traceability.links.hold`: Place Record On Hold
+- `traceability.links.release`: Release Record Hold
+- `traceability.links.amend`: Amend Record
+- `traceability.links.reverse`: Reverse Record
 
 ## Operational scenario matrix
 
@@ -69,6 +73,106 @@ Forbidden shortcuts:
 Queue Reconciliation Item
 
 Permission: `traceability.reconciliation.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `traceability.links`, `traceability.dimensions`, `traceability.reconciliation`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `traceability.links.hold`
+
+Place Record On Hold
+
+Permission: `traceability.links.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `traceability.links`, `traceability.dimensions`, `traceability.reconciliation`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `traceability.links.release`
+
+Release Record Hold
+
+Permission: `traceability.links.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `traceability.links`, `traceability.dimensions`, `traceability.reconciliation`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `traceability.links.amend`
+
+Amend Record
+
+Permission: `traceability.links.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `traceability.links`, `traceability.dimensions`, `traceability.reconciliation`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `traceability.links.reverse`
+
+Reverse Record
+
+Permission: `traceability.links.write`
 
 Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
 

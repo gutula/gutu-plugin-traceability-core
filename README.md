@@ -26,7 +26,7 @@ Document lineage, correlation IDs, upstream/downstream references, reconciliatio
 
 Defines document lineage, common dimensions, and reconciliation surfaces so cross-plugin business effects stay visible and repairable.
 
-- Exports 3 governed actions: `traceability.links.record`, `traceability.dimensions.publish`, `traceability.reconciliation.queue`.
+- Exports 7 governed actions: `traceability.links.record`, `traceability.dimensions.publish`, `traceability.reconciliation.queue`, `traceability.links.hold`, `traceability.links.release`, `traceability.links.amend`, `traceability.links.reverse`.
 - Owns 3 resource contracts: `traceability.links`, `traceability.dimensions`, `traceability.reconciliation`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `traceability.links.record`, `traceability.dimensions.publish`, `traceability.reconciliation.queue` |
+| Actions | 7 | `traceability.links.record`, `traceability.dimensions.publish`, `traceability.reconciliation.queue`, `traceability.links.hold`, `traceability.links.release`, `traceability.links.amend`, `traceability.links.reverse` |
 | Resources | 3 | `traceability.links`, `traceability.dimensions`, `traceability.reconciliation` |
 | Jobs | 2 | `traceability.projections.refresh`, `traceability.reconciliation.run` |
 | Workflows | 1 | `traceability-reconciliation` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/traceability-core";
+import { manifest, recordTraceabilityLinkAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/traceability-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(recordTraceabilityLinkAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

@@ -9,6 +9,10 @@
 | traceability.links.record | Record Traceability Link |
 | traceability.dimensions.publish | Publish Common Dimension |
 | traceability.reconciliation.queue | Queue Reconciliation Item |
+| traceability.links.hold | Place Record On Hold |
+| traceability.links.release | Release Record Hold |
+| traceability.links.amend | Amend Record |
+| traceability.links.reverse | Reverse Record |
 | traceability.projections.refresh | Job definition queued on `traceability-projections`. |
 | traceability.reconciliation.run | Job definition queued on `traceability-reconciliation`. |
 | traceability-reconciliation | Open, review, repair, and close cross-plugin reconciliation items. |

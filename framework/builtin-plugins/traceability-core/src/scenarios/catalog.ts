@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "traceability.links.record",
       "traceability.dimensions.publish",
-      "traceability.reconciliation.queue"
+      "traceability.reconciliation.queue",
+      "traceability.links.hold",
+      "traceability.links.release",
+      "traceability.links.amend",
+      "traceability.links.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -25,7 +29,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "traceability.links.record",
       "traceability.dimensions.publish",
-      "traceability.reconciliation.queue"
+      "traceability.reconciliation.queue",
+      "traceability.links.hold",
+      "traceability.links.release",
+      "traceability.links.amend",
+      "traceability.links.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -44,7 +52,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "traceability.links.record",
       "traceability.dimensions.publish",
-      "traceability.reconciliation.queue"
+      "traceability.reconciliation.queue",
+      "traceability.links.hold",
+      "traceability.links.release",
+      "traceability.links.amend",
+      "traceability.links.reverse"
     ],
     "downstreamTargets": {
       "create": [],
