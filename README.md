@@ -61,11 +61,26 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `traceability-core` |
 | Repo | [gutu-plugin-traceability-core](https://github.com/gutula/gutu-plugin-traceability-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `document-core` |
+| Recommended Plugins | `sales-core`, `procurement-core`, `inventory-core`, `accounting-core` |
+| Capability Enhancing | `manufacturing-core`, `quality-core`, `analytics-bi-core` |
+| Integration Only | None |
+| Suggested Packs | `localization-global-base` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.traceability`, `events.publish.traceability` |
 | Provided Capabilities | `traceability.links`, `traceability.dimensions`, `traceability.reconciliation` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `document-core`
+- Recommended plugins: `sales-core`, `procurement-core`, `inventory-core`, `accounting-core`
+- Capability-enhancing plugins: `manufacturing-core`, `quality-core`, `analytics-bi-core`
+- Integration-only plugins: none
+- Suggested packs: `localization-global-base`
+- Standalone supported: yes
+- Provides the shared lineage and reconciliation fabric; it is more valuable as more business domains are enabled.
 
 ## Capability Matrix
 

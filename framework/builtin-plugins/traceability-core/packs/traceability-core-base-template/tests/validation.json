@@ -1,6 +1,29 @@
 {
   "packageId": "traceability-core",
   "packName": "traceability-core-base-template",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "document-core"
+  ],
+  "recommendedPlugins": [
+    "sales-core",
+    "procurement-core",
+    "inventory-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "manufacturing-core",
+    "quality-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [
+    "localization-global-base"
+  ],
   "expectedActions": [
     "traceability.links.record",
     "traceability.dimensions.publish",

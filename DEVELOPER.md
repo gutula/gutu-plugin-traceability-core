@@ -54,6 +54,11 @@ Defines document lineage, common dimensions, and reconciliation surfaces so cros
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `document-core` |
+| Recommended Plugins | `sales-core`, `procurement-core`, `inventory-core`, `accounting-core` |
+| Capability Enhancing | `manufacturing-core`, `quality-core`, `analytics-bi-core` |
+| Integration Only | None |
+| Suggested Packs | `localization-global-base` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.traceability`, `events.publish.traceability` |
 | Provides Capabilities | `traceability.links`, `traceability.dimensions`, `traceability.reconciliation` |
 | Owns Data | `traceability.links`, `traceability.dimensions`, `traceability.reconciliation`, `traceability.snapshots` |

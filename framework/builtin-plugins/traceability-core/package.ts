@@ -54,9 +54,68 @@ export default definePackage({
       "packageId": "document-core",
       "class": "required",
       "rationale": "Required for Traceability & Dimensions Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "sales-core",
+      "class": "optional",
+      "rationale": "Recommended with Traceability & Dimensions Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "procurement-core",
+      "class": "optional",
+      "rationale": "Recommended with Traceability & Dimensions Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "inventory-core",
+      "class": "optional",
+      "rationale": "Recommended with Traceability & Dimensions Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "accounting-core",
+      "class": "optional",
+      "rationale": "Recommended with Traceability & Dimensions Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "manufacturing-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Traceability & Dimensions Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "quality-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Traceability & Dimensions Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "analytics-bi-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Traceability & Dimensions Core with deeper downstream automation, visibility, or workflow coverage."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "sales-core",
+    "procurement-core",
+    "inventory-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "manufacturing-core",
+    "quality-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [
+    "localization-global-base"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Provides the shared lineage and reconciliation fabric; it is more valuable as more business domains are enabled."
+  ],
+  "optionalWith": [
+    "sales-core",
+    "procurement-core",
+    "inventory-core",
+    "accounting-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "traceability.links",
