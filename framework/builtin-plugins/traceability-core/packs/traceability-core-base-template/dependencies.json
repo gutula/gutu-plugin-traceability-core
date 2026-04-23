@@ -1,0 +1,17 @@
+{
+  "plugin": "traceability-core",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "document-core"
+  ],
+  "requiredCapabilities": [
+    "ui.register.admin",
+    "api.rest.mount",
+    "data.write.traceability",
+    "events.publish.traceability"
+  ]
+}

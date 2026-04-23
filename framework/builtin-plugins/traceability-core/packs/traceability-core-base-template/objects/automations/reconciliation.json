@@ -1,0 +1,10 @@
+{
+  "automationId": "traceability-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "traceability.reconciliation.run",
+  "queues": [
+    "broken-lineage-links",
+    "reconciliation-backlog",
+    "missing-upstream-correlation"
+  ]
+}

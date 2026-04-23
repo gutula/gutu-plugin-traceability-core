@@ -1,0 +1,25 @@
+{
+  "packageId": "traceability-core",
+  "packName": "traceability-core-base-template",
+  "expectedActions": [
+    "traceability.links.record",
+    "traceability.dimensions.publish",
+    "traceability.reconciliation.queue"
+  ],
+  "expectedResources": [
+    "traceability.links",
+    "traceability.dimensions",
+    "traceability.reconciliation"
+  ],
+  "expectedReports": [
+    "Document Traceability Graph",
+    "Reconciliation Queue Summary",
+    "Serial or Batch Genealogy",
+    "Downstream Failure Audit"
+  ],
+  "expectedExceptionQueues": [
+    "broken-lineage-links",
+    "reconciliation-backlog",
+    "missing-upstream-correlation"
+  ]
+}

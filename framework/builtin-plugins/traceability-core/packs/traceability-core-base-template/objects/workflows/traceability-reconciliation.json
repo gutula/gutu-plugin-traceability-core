@@ -1,0 +1,9 @@
+{
+  "workflowId": "traceability-reconciliation",
+  "actors": [
+    "operator",
+    "approver",
+    "controller"
+  ],
+  "description": "Open, review, repair, and close cross-plugin reconciliation items."
+}

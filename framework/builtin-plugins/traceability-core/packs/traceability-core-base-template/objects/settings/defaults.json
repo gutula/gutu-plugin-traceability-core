@@ -1,0 +1,9 @@
+{
+  "workspace": "business-foundations",
+  "route": "/admin/business/traceability",
+  "pageTitle": "Traceability Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}

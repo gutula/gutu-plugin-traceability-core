@@ -1,0 +1,19 @@
+{
+  "pluginId": "traceability-core",
+  "reports": [
+    "Document Traceability Graph",
+    "Reconciliation Queue Summary",
+    "Serial or Batch Genealogy",
+    "Downstream Failure Audit"
+  ],
+  "exceptionQueues": [
+    "broken-lineage-links",
+    "reconciliation-backlog",
+    "missing-upstream-correlation"
+  ],
+  "operationalScenarios": [
+    "lead-to-cash-lineage",
+    "procure-to-pay-lineage",
+    "plan-to-produce-genealogy"
+  ]
+}
